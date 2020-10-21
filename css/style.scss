@@ -40,6 +40,13 @@ html {
   }
 }
 
+.home-intro-container {
+  height: 100%;
+  @include bp-xsmall {
+    height: 100vh;
+  }
+}
+
 body {
   background-color: #e9edf0;
   @extend %opensans;
@@ -115,6 +122,10 @@ input.btn {
   padding: 20px 0;
 }
 
+.section-jump-cell {
+  padding: 0;
+}
+
 .section-jump {
   position: relative;
   top: 0;
@@ -135,12 +146,13 @@ input.btn {
 	2.0 Home Hero
 --------------------------------------------------------------*/
 .hero-container {
-  margin: 10em 0 9em 0;
+  margin: 9em 0 8em 0;
+  height: calc(100% - 75px);
   @include bp-xsmall {
-    margin: 5em 0 5em 0;
+    margin: 9em 0 5em 0;
   }
   @include bp-small {
-    margin: 5em 0 5em 0;
+    margin: 9em 0 8em 0;
   }
 }
 
@@ -435,7 +447,7 @@ article {
   .fade-rule {
     height: 1px;
     background-color: lightgray;
-    width: 66em;
+    width: 80%;
     margin: 0 auto;
     background-image: linear-gradient(
       left,
@@ -512,12 +524,13 @@ article {
 --------------------------------------------------------------*/
 
 .progress-bar-wrapper {
-  width: 500px;
+  width: 100%;
 }
 
 .progress-bar-row {
   display: flex;
   justify-content: center;
+  margin: 0;
 }
 
 .progress-bar-heading {
@@ -526,7 +539,8 @@ article {
 }
 
 .progress-bar-content {
-  // width: 100%;
+  width: 100%;
+  margin: 0;
 }
 
 .progress-bar {
