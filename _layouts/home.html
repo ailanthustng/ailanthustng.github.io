@@ -29,7 +29,7 @@
         <h2 class="section-title text-center">{{ site.projects_title }}</h2>
         {% endif %} {% if site.section_subtitle != '' %}
         <p class="section-subtitle text-center">{{ site.section_subtitle }}</p>
-        {% endif %} {% for post in projects.posts %}
+        {% endif %} {% for post in site.projects %}
         <div class="wow fadeIn">
           {% if post.position == "left" %} {% include content-left.html %} {%
           endif %} {% if post.position == "right" %} {% include
