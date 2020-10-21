@@ -1,38 +1,88 @@
-{% include header.html %}
+{% include header.html %} {% include home-hero.html %}
 
-    {% include home-hero.html %}
-
-    <main id="portfolio">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-
-            {% if site.section_title != '' %}
-            <h2 class="section-title text-center">{{ site.section_title }}</h2>
-            {% endif %}
-            {% if site.section_subtitle != '' %}
-            <p class="section-subtitle text-center">{{ site.section_subtitle }}</p>
-            {% endif %}
-
-            <div class="break"></div>
-
-            {% for post in paginator.posts %}
-              <div class="wow fadeIn">
-              {% if post.position == "left" %}
-                {% include content-left.html %}
-              {% endif %}
-
-              {% if post.position == "right" %}
-                {% include content-right.html %}
-              {% endif %}
-              </div>
-            {% endfor %}
-
-            {% include pagination.html %}
-
-          </div>
+<main id="portfolio">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-12">
+        <!-- Internships -->
+        <div class="test" id="internships">
+        {% if site.internship_title != '' %}
+        <h2 class="section-title text-center">{{ site.internship_title }}</h2>
+        {% endif %} 
+        {% if site.section_subtitle != '' %}
+        <p class="section-subtitle text-center">{{ site.section_subtitle }}</p>
+        {% endif %} 
+        {% for post in site.internships %}
+        <div class="wow fadeIn">
+          {% if post.position == "left" %} {% include content-left.html %} {%
+          endif %} {% if post.position == "right" %} {% include
+          content-right.html %} {% endif %}
         </div>
+        {% endfor %} {% include pagination.html %}
+        </div>
+
+        <div class="break"></div>
+
+        <!-- Projects -->
+        <div id="projects">
+        {% if site.section_title != '' %}
+        <h2 class="section-title text-center">{{ site.section_title }}</h2>
+        {% endif %} {% if site.section_subtitle != '' %}
+        <p class="section-subtitle text-center">{{ site.section_subtitle }}</p>
+        {% endif %} {% for post in paginator.posts %}
+        <div class="wow fadeIn">
+          {% if post.position == "left" %} {% include content-left.html %} {%
+          endif %} {% if post.position == "right" %} {% include
+          content-right.html %} {% endif %} {% if post.position == "center" %}
+          {% include content-center.html %} {% endif %}
+        </div>
+        {% endfor %} {% include pagination.html %}
+        </div>
+
+        <div class="break"></div>
+
+        <!-- Relevant Experience -->
+        <div id="experiences">
+        {% if site.experiences_title != '' %}
+        <h2 class="section-title text-center">{{ site.experiences_title }}</h2>
+        {% endif %} {% if site.section_subtitle != '' %}
+        <p class="section-subtitle text-center">{{ site.section_subtitle }}</p>
+        {% endif %} {% for post in site.experiences %}
+        <div class="wow fadeIn">
+          {% if post.position == "left" %} {% include content-left.html %} {%
+          endif %} {% if post.position == "right" %} {% include
+          content-right.html %} {% endif %} {% if post.position == "center" %}
+          {% include content-center.html %} {% endif %}
+        </div>
+        {% endfor %} {% include pagination.html %}
+        </div>
+
+        <div class="break"></div>
+
+        <div id="skillsets">
+        <!-- Skillset -->
+        {% if site.skillset_title != '' %}
+        <h2 class="section-title text-center">{{ site.skillset_title }}</h2>
+        {% endif %} {% if site.section_subtitle != '' %}
+        <p class="section-subtitle text-center">{{ site.section_subtitle }}</p>
+        {% endif %} {% for post in site.skillsets %}
+        <div class="wow fadeIn">
+          {% if post.level == "basic" %}  
+          {% include skillset-progress-basic.html %} 
+          {% endif %} 
+          {% if post.level == "intermediate" %}  
+          {% include skillset-progress-intermediate.html %} 
+          {% endif %} 
+          {% if post.level == "proficient" %}  
+          {% include skillset-progress-proficient.html %} 
+          {% endif %} 
+        </div>
+        {% endfor %} 
+        </div>
+
       </div>
-    </main>
+    </div>
+  </div>
+</main>
 
 {% include footer.html %}
