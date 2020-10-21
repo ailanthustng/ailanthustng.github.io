@@ -29,12 +29,12 @@ plugins:
   - jekyll-paginate-v2
 
 internship_title: "Internships"
-section_title: "Projects"
+projects_title: "Projects"
 experiences_title: "Relevant Experiences"
 skillset_title: "Skillsets"
 collections:
   - internships
-  - posts
+  - projects
   - experiences
   - skillsets
 
